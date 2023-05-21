@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}ランキング{% endblock %}
+
+{% block header %}
+<h1 class="header-string">ランキング</h1>
+{% endblock %}
+
+{% block content %}
+<table class="table-list">
+    <thead>
+        <tr>
+            <th>ユーザー名</th><th>アバター</th></th><th>勝率</th><th>プレイ回数</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for user in users %}
+        <tr>
+            <td><a href="{% url 'user' user.id %}">{{user.username}}</a></td>
+            <td><img src="{{user.image.url}}" class="image-ranking"></td>
+            <td>{{user.win_rate|floatformat}}%</td>
+            <td>{{user.play_num}}回</td>
+        </tr>
+    {% empty %}
+        <tr><td>ユーザーがいません...</td></tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

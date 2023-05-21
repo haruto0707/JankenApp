@@ -1,0 +1,33 @@
+{% load static %}
+<!doctype html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <title>{% block title %}{% endblock %}</title>
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" >
+</head>
+<body class="container">
+    <nav class="nav-bar">
+        <ul>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'index' %}">ホーム</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'janken' %}">じゃんけん</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'ranking' %}">ランキング</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'logout' %}">ログアウト</a>
+            </li>
+            <li class="nav-item">
+                <span><span class="username-text">{{user.username}}</span> でログイン中</span>
+            </li>
+        </ul>
+    </nav>
+    <div class="header">{% block header %}{% endblock %}</div>
+    <div class="content">{% block content %}{% endblock %}</div>
+</body>
+</html>

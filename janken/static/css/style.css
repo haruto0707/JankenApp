@@ -1,0 +1,80 @@
+.image-hand{
+    width: 200px;
+    height: auto;
+}
+.image-ranking, .image-profile{
+    width:50px;
+    height:auto;
+}
+.container{
+    margin:0px;
+}
+.content{
+    color:#696969;
+    margin:20px;
+}
+.header{
+    color:#696969;
+    margin:20px;
+}
+.header-text{
+    font-size:32px;
+}
+.username-text{
+    color:#000000;
+}
+a{
+    color:#1e90ff;
+    text-decoration: none;
+}
+a:hover{
+    color:#ff7f50;
+}
+.nav-item{
+    margin-left:20px;
+    margin-right:20px;
+    list-style: none;
+    display: inline-block;
+    font-size: 20px;
+}
+.nav-bar{
+    background-color: #e6e6fa;
+    overflow: hidden;
+    margin: 0px;
+}
+.result-win{
+    font-size: 30px;
+    color: #ff7f50;
+}
+.result-lose{
+    font-size: 30px;
+    color:#4169e1;
+}
+.result-draw{
+    font-size: 30px;
+    color:#696969;
+}
+table{
+    border-collapse: collapse;
+    margin:20px;
+}
+.side{
+    display: flex;
+    flex-wrap: wrap;
+}
+.table-list td, .table-list th{
+    text-align: center;
+    border: solid 1px;
+    padding: 5px;
+}
+.table-janken td, .table-janken th{
+    text-align: center;
+    padding: 5px;
+}
+.table-account .account-button{
+    border: none;
+}
+.table-account td, .table-account th{
+    padding: 5px;
+    border: solid 1px #000000;
+}

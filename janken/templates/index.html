@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block title %}あなたの情報{% endblock %}
+
+{% block header %}
+<h1 class="header-string">ホームページ</h1>
+<p>{{user.username}}さん こんにちは！</p>
+{% endblock %}
+
+{% block content %}
+<img src="{{user.image.url}}" class="image-profile">
+<div class="side">
+    <table class="table-list">
+        <thead>
+            <tr><th colspan="2">{{user.username}} さんの成績</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>プレイ回数</td><td>{{user.play_num}}回</td></tr>
+            <tr><td>勝ち</td><td>{{user.win_num}}回</td></tr>
+            <tr><td>負け</td><td>{{user.lose_num}}回</td></tr>
+            <tr><td>引き分け</td><td>{{user.draw_num}}回</td></tr>
+            <tr><td>勝率</td><td>{{user.win_rate|floatformat}}%</td></tr>
+        </tbody>
+    </table>
+
+    <table class="table-list">
+        <thead>
+            <tr>
+                <th colspan="2">{{user.username}} さんの統計</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>グーの回数</td><td>{{user.stone_num}}回</td></tr>
+            <tr><td>チョキの回数</td><td>{{user.scissors_num}}回</td></tr>
+            <tr><td>パーの回数</td><td>{{user.paper_num}}回</td></tr>
+        </tbody>
+    </table>
+</div>
+{% endblock %}

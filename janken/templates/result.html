@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}じゃんけん{% endblock %}
+
+{% block header %}
+<h1 class="header-title">じゃんけんの結果</h1>
+{% endblock %}
+
+{% block content %}
+<table class="table-janken">
+    <thead>
+        <tr><th colspan="2">
+            {% if result == "win" %}
+            <p class="result-win">あなたの勝ちです</p>
+            {% elif result == "lose" %}
+            <p class="result-lose">あなたの負けです</p>
+            {% else %}
+            <p class="result-draw">引き分けです</p>
+            {% endif %}
+        </th></tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>あなたが出した手</td><td>相手が出した手</td>
+        </tr>
+        <tr>
+            <td>
+                {% if player_hand == "stone" %}
+                <img src="{% static 'img/janken_gu.png' %}" class="image-hand">
+                {% elif player_hand == "scissors" %}
+                <img src="{% static 'img/janken_choki.png' %}" class="image-hand">
+                {% else %}
+                <img src="{% static 'img/janken_pa.png' %}" class="image-hand">
+                {% endif %}
+            </td>
+            <td>
+                {% if com_hand == "stone" %}
+                <img src="{% static 'img/janken_gu.png' %}" class="image-hand">
+                {% elif com_hand == "scissors" %}
+                <img src="{% static 'img/janken_choki.png' %}" class="image-hand">
+                {% else %}
+                <img src="{% static 'img/janken_pa.png' %}" class="image-hand">
+                {% endif %}
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2"><a href="{% url 'janken' %}">もう一度プレイする</a></td>
+        </tr>
+    </tbody>
+</table>
+{% endblock %}

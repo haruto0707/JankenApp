@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %}ユーザー情報{% endblock %}
+
+{% block header %}
+<h1 class="header-string">ユーザー情報</h1>
+<p>{{other.username}}さんの情報</p>
+{% endblock %}
+
+{% block content %}
+<img src="{{other.image.url}}" class="image-profile">
+<div class="side">
+    <table class="table-list">
+        <thead>
+            <tr><th colspan="2">{{other.username}} さんの成績</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>プレイ回数</td><td>{{other.play_num}}回</td></tr>
+            <tr><td>勝ち</td><td>{{other.win_num}}回</td></tr>
+            <tr><td>負け</td><td>{{other.lose_num}}回</td></tr>
+            <tr><td>引き分け</td><td>{{other.draw_num}}回</td></tr>
+            <tr><td>勝率</td><td>{{other.win_rate|floatformat}}%</td></tr>
+        </tbody>
+    </table>
+
+    <table class="table-list">
+        <thead>
+            <tr><th colspan="2">{{other.username}} さんの統計</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>グーの回数</td><td>{{other.stone_num}}回</td></tr>
+            <tr><td>チョキの回数</td><td>{{other.scissors_num}}回</td></tr>
+            <tr><td>パーの回数</td><td>{{other.paper_num}}回</td></tr>
+        </tbody>
+    </table>
+</div>
+
+{% endblock %}

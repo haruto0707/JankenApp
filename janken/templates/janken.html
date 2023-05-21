@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}じゃんけん{% endblock %}
+
+{% block header %}
+<h1 class="header-text">じゃんけん</h1>
+{% endblock %}
+
+{% block content %}
+<form action="{% url 'janken' %}" method="post">
+    {% csrf_token %}
+    <table class="table-janken">
+        <tbody>
+            <tr><td><img src="{% static 'img/janken_gu.png' %}" class="image-hand"></td>
+                <td><img src="{% static 'img/janken_choki.png' %}" class="image-hand"></td>
+                <td><img src="{% static 'img/janken_pa.png' %}" class="image-hand"></td>
+            </tr>
+    
+            <tr>
+                <td><button type="submit" name="hand" value="stone">グー</button></td>
+                <td><button type="submit" name="hand" value="scissors">チョキ</button></td>
+                <td><button type="submit" name="hand" value="paper">パー</button></td>
+            </tr>
+        </tbody>
+    </table>
+</form>
+{% endblock %}
